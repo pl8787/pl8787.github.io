@@ -69,28 +69,92 @@
     		<h3> MOTIVATION </h3>
     		<hr/>
     		<div class="col-sm-12">
+    			<p>Recently, deep learning methods has been applied to this task and gain state-of-the-art performances. Most existing deep models~\cite{yu2014deep,qiuconvolutional} are directly using similarities between question and answer by their individual sentence embeddings, obtained by convolutional sentence model (CSM). Such deep models are effective in solving the mismatching problem, therefore they usually work well in distinguishing the best answers of one question with those of other questions. However, the information is usually limited in the descriptions of question, and there is always some lexical gap between question and answer in the application of CQA. These issues make the above deep learning approach far from solving the problem of selecting the best answer from the candidates with respect to one question.</p>
 
+				<p>In this paper, we propose a novel deep architecture, namely SPAN, to tackle the above challenges. The main idea comes from the assumption that {\em similar questions usually have similar answers}. Based on the above assumption, we can better understand a question with its similar questions' best answers, defined as {\em support answers} in this paper. We can see that support answers provide additional content for a question. Furthermore, the lexical gap between question and answer is largely bridged by using support answers to represent a question. Firstly, a deep model is used to generate the sentence embeddings of the question, candidate answer, and the support answers. Then two similarities are computed, one is between question and the candidate answer, and the other one is between support answers and the candidate answer. Finally, the matching score is produced by combing them. Please note that SPAN is a general architecture where any kind of deep model can be used as the basic component to generate the sentence embedding. In this paper, we use CSM as an example to facilitate the study.</p>
     		</div>
     	</div>
     	<div class="row">
     		<h3> MODEL </h3>
     		<hr/>
     		<div class="col-sm-12">
+    			<p>
+    				The input of CSM is a sentence $T$, where each word $w_i$ in $T$ is represented as its word embedding initialed by Word2Vec. Then one dimensional convolution and pooling is then applied to the sentence layer by layer, and a sentence embedding will be generated as the output of CSM.
+    			</p>
 
+				<p>
+					The architecture of SPAN is illustrated in Fig~\ref{Fig.models}B. Suppose there is a question $Q$ and a candidate answer $A$, they are both feeded into a CSM to obtain their sentence embeddings, denoted as $v_Q$ and $v_A$, respectively. Simultaneously, we also leverage the support answers to help understand the semantic of the question. Specifically, we use BM25~\cite{robertson2009probabilistic}, a common retrieval model, to obtain the similar training questions of the original question. Then their best answers are extracted as the support answers, denoted as $SA_Q$. They are also feeded into CSM to obtain the sentence embeddings $v_{SA}^{(i)},i=1,\dots,m$. Based on those above sentence embeddings, we can obtain two kinds of similarities. The first one is between the question and candidate answer, and the second one is between the support answers and the candidate answer. The similarity measure can be any kind of operators, such as Cosine, Bilinear, and Tensor, denoted as $\otimes$. The matching score is finally produced by combing these similarities, described as follows.
+				</p>
+				<p>
+				    <img src = "http://latex.codecogs.com/gif.latex?S(Q,A)=\lambda_1v_Q\otimes v_A+ \sum_{i=1}^m\lambda_{2i}v_A\otimes v_{SA}^{(i)}" />
+				    <br/>
+					where $\lambda_1$ and $\lambda_{2i}$ are combining parameters, which are tuned by hand on validation set.
+				</p>
+				<p>
+				All other parameters, such as word embeddings and weights in convolution, are learned in the training process. Specifically, we use the ranking loss for optimization. Given a training question $Q$ and its candidate answers $A_i,i=1,\dots,n$, we denote $B_Q$ as the best answer of $Q$. Then we can construct $n-1$ pairs, denoted as $(Q,B_Q,A_i)$, where $A_i\neq B_Q$. The loss function on each pair is defined as:
+				<br/>
+				<img src = "http://latex.codecogs.com/gif.latex?L(Q, B_Q, A_i)=\max \bigl(0, 1-S(Q,B_Q)+S(Q,A_i) \bigr)"/>
+				</p>
+    			
     		</div>
     	</div>
     	<div class="row">
     		<h3> EXPERIMENTS </h3>
     		<hr/>
     		<div class="col-sm-12">
+				<p>
+					We conduct experiments on Yahoo! Answers\footnote{http://webscope.sandbox.yahoo.com} dataset to evaluate our SPAN. The data set contains 142,627 questions and their candidate answers. We first filter out the questions which only contain one candidate answer or have less then three similar questions. The remaining 123,032 questions are then splitted into three set, training, validation, and testing set, which contains 98,426, 12,303, and 12,303 questions, respectively.
+				</p>
+				<p>
+					In testing set $\mathbb{Q}$, a ranking list of the candidate answers are obtained according to the descending order of the matching scores. The evaluation metrics of our experiments are P@1 and MRR. Since each question only has one best answer, the two evaluation measures are of the following forms.
+				</p>
 
+				<table class="table table-striped">
+					<thead>
+			        	<tr>
+			          	<th>Model</th>
+			          	<th>Random</th>
+			          	<th>BM25</th>
+			          	<th>CSM</th>
+			          	<th>SPAN</th>
+			          	<th>SPAN-SA</th>
+			        	</tr>
+			      	</thead>
+			      	<tbody>
+			        	<tr>
+			          	<th scope="row">P@1</th>
+			          	<td>25.1</td>
+			          	<td>39.4</td>
+			          	<td>47.6</td>
+			          	<td>48.5</td>
+			          	<td>48.3</td>
+			        	</tr>
+			        	<tr>
+			          	<th scope="row">MRR</th>
+			          	<td>48.4</td>
+			          	<td>59.9</td>
+			          	<td>66.6</td>
+			          	<td>67.2</td>
+			          	<td>67.1</td>
+			        	</tr>
+			      	</tbody>
+				</table>
+
+				<p>
+					Three baselines are used in our model, i.e.Random, BM25, and CSM. Random indicate the model of directly selecting a random ranking list for evaluation. BM25 indi- cate the model of using BM25 to calculate the similarity be- tween question and its candidate answers to obtain the rank- ing list. The parameters of BM25 are set to be k1 = 0.3 and b = 0.05, which are tuned by grid search on validation set. For SPAN, λ1 and λ2i are set to be equal in our ex- periments, with other parameters learned automatically. The experimental results are listed in Table 1.
+				</p>
+				<p>
+					From the results, we can see that SPAN outperforms the three baselines. This demonstrates that the introduction of support answers can largely alleviate the problem of infor- mation lack in question description and lexical gap between question and answer, and facilitate the matching process. We also list the results of SPAN by only using the representa- tions of support answers, denoted as SPAN-SA. The results show that it can also beat the three baselines, indicating that support answers themselves can be viewed as good repre- sentations for a question in this task.
+				</p>
     		</div>
     	</div>
     	<div class="row">
     		<h3> DISCUSSION </h3>
     		<hr/>
     		<div class="col-sm-12">
-
+    			<p>
+    				In this paper, we propose a novel deep architecture for CQA, namely SPAN. The main contribution is to introduce support answers to help understand the semantic of a question. Our experimental results show that the architecture performs better than several existing baselines. In future, we decide to test our idea on other more complex models such as Arc-II~\cite{hu2014convolutional} and LSTM~\cite{palangi2015deep}. We also want to investigate how to design an end-to-end model to automatically involve support answers in the learning process.
+    			</p>
     		</div>
     	</div>
 
