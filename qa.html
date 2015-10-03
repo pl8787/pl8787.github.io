@@ -94,6 +94,9 @@
             <hr/>
             <div class="col-sm-12">
                 <p>
+                    In this section, we introduce our new deep architecture for CQA, namely SPAN. The basic component of SPAN is convolutional sentence model (CSM), see Fig 1A. Please note that SPAN is a general framework, and we can replace CSM to any kind of sentence embedding model, such as RNN [<b>socher2011dynamic</b>] and LSTM [<b>palangi2015deep</b>]. The reason why we use CSM is because it is a common deep model to represent a sentence, and has been widely applied in many related works such as [<b>yu2014deep,qiuconvolutional</b>].
+                </p>
+                <p>
                     The input of CSM is a sentence <img src = "http://latex.codecogs.com/gif.latex?T" />, where each word <img src = "http://latex.codecogs.com/gif.latex?w_i" /> in <img src = "http://latex.codecogs.com/gif.latex?T" /> is represented as its word embedding initialed by Word2Vec. Then one dimensional convolution and pooling is then applied to the sentence layer by layer, and a sentence embedding will be generated as the output of CSM.
                 </p>
                 <img src="images/qa/models.svg" height="300" width="1000" />
@@ -159,7 +162,20 @@
                     Three baselines are used in our model, i.e.Random, BM25, and CSM. Random indicate the model of directly selecting a random ranking list for evaluation. BM25 indicate the model of using BM25 to calculate the similarity between question and its candidate answers to obtain the ranking list. The parameters of BM25 are set to be <img src = "http://latex.codecogs.com/gif.latex?k1=0.3" /> and <img src = "http://latex.codecogs.com/gif.latex?b=0.05" />, which are tuned by grid search on validation set. For SPAN, <img src = "http://latex.codecogs.com/gif.latex?\lambda_1" /> and <img src = "http://latex.codecogs.com/gif.latex?\lambda_{2i}" /> are set to be equal in our experiments, with other parameters learned automatically. The experimental results are listed in Table 1.
                 </p>
                 <p>
-                    From the results, we can see that SPAN outperforms the three baselines. This demonstrates that the introduction of support answers can largely alleviate the problem of infor- mation lack in question description and lexical gap between question and answer, and facilitate the matching process. We also list the results of SPAN by only using the representa- tions of support answers, denoted as SPAN-SA. The results show that it can also beat the three baselines, indicating that support answers themselves can be viewed as good repre- sentations for a question in this task.
+                    From the results, we can see that SPAN outperforms the three baselines. This demonstrates that the introduction of support answers can largely alleviate the problem of information lack in question description and lexical gap between question and answer, and facilitate the matching process. We also list the results of SPAN by only using the representations of support answers, denoted as SPAN-SA. The results show that it can also beat the three baselines, indicating that support answers themselves can be viewed as good representations for a question in this task.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <h3> VISUALIZATION </h3>
+            <hr/>
+            <div class="col-sm-12">
+                <p>
+                To visualize what we have learnt, we set <img src = "http://latex.codecogs.com/gif.latex?\otimes" /> to negative Euclidean Distance. The CSM's output as 2 dimension vector, in order to draw it on Cartesian coordinate. 
+                </p>
+                <img src="images/qa/visual.png" width="1000"/>
+                <p>
+                The <b style="color:red">Red-X</b> denotes Question, <b style="color:red">Red-Dot</b> denotes Support Answers (we use three Similar Questions). The <b style="color:green">Green-Dot</b> denotes the Best Answer of this Question and <b style="color:blue">Blue-Dot</b> denotes the other candidate answers.
                 </p>
             </div>
         </div>
