@@ -1,207 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Liang Pang - Homepage</title>
+<link href="./user_profile.css" rel="stylesheet" type="text/css" />
+<script type="text/jscript">
+// JavaScript Document
+function nTabs(thisObj,Num){
+if(thisObj.className == "active")return;
+var tabObj = thisObj.parentNode.id;
+var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+for(i=0; i <tabList.length; i++)
+{
+if (i == Num)
+{
+   thisObj.className = "active"; 
+      document.getElementById(tabObj+"_Content"+i).style.display = "block";
+}else{
+   tabList[i].className = "normal"; 
+   document.getElementById(tabObj+"_Content"+i).style.display = "none";
+}
+} 
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?75fbaf89e4029a5b860f44bcb025ca8d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="ico/favicon.ico">
-
-    <title>pl8787's blog</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">pl8787's blog</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+<body>
+<header class="panel_cover panel_cover_collapsed">
+  <div class="panel_main">
+    <div class="panel_main_inner panel_inverted">
+        <!-- 头像 -->
+        <img src="images/pl.jpg" height="200" class="panel_cover_photo" />
+        <!-- 姓名、简介、基本信息 -->
+        <h1 class="panel_title">Liang Pang</h1>
+        <div class="name">庞 亮</div>
+        <div class="name"> 
+            <a target="new" href="http://github.com/pl8787/"><img height="20" src="images/github.png"></a>
+            <a target="new" href="https://www.linkedin.com/in/liangpang/"><img height="20" src="images/linkedin.png"></a>
+            <a target="new" href="https://scholar.google.com/citations?user=1dgQHBkAAAAJ&hl=en"><img height="20" src="images/google-scholar.png"></a>
+        </div>
+        <p>Associate Professor</p>
+        <!-- p>CAS Key Lab of Web Data Science and Technology</p>-->
+        <p>Data Intelligence System Research Center</p>
+        <p>Institute of Computing Technology (ICT)</p>
+        <p>Chinese Academy of Sciences (CAS)</p>
+        <div class="info">
+            <ul>
+                <li>Email&nbsp;:&nbsp;pangliang AT ict.ac.cn</li>
+                <li>Office:&nbsp;:&nbsp;(8610)62600964</li>
+                <li>Address&nbsp;:&nbsp;NO. 6 Kexueyuan South Road, Haidian District, Beijing, P.R.China, 100190</li>               
+            </ul>
+        </div>
+    </div>
+  </div>
+</header>
+<div class="content_wrapper">
+    <div class="content_wrapper_inner">
+        <!-- 右侧 开始 -->
+        <div>
+          <div class="profile_tab">
+            <!-- Tab开始 -->
+            <div class="tabtitle">
+              <ul id="myTab44">
+                <li class="active" onclick="nTabs(this,0);">Biography</li><div class="profile_tab_line"></div>
+                <li class="normal" onclick="nTabs(this,1);">Publication</li><div class="profile_tab_line"></div>                
+                <li class="normal" onclick="nTabs(this,2);">ToolKits & Demos</li><div class="profile_tab_line"></div>
+                <!--- 
+                <li class="normal" onclick="nTabs(this,2);">Funds</li><div class="profile_tab_line"></div>
+                <li class="normal" onclick="nTabs(this,4);">Students</li><div class="profile_tab_line"></div>
+                <li class="normal" onclick="nTabs(this,5);">Talks</li><div class="profile_tab_line"></div>
+                <li class="normal" onclick="nTabs(this,6);">Teach</li><div class="profile_tab_line"></div>
+                --->
               </ul>
             </div>
+            <!-- 内容开始 -->
+            <div class="tabcontent">
+              <div id="myTab44_Content0">
+                <!-- 基本资料 开始 -->
+                <div class="profile_title"><h2>About Me</h2></div>
+                <div class="personal_list">
+                    <p>Liang Pang is an associate professor at <a href='http://www.ict.ac.cn'>Institute of Computing Technology, Chinese Academy of Sciences</a>. He received Ph.D. degree in Computer Science from <a href='http://www.ucas.ac.cn/'>University of Chinese Academy of Sciences</a> in 2018 under supervising by <a href='http://sourcedb.ict.cas.cn/cn/jssrck/200909/t20090917_2496654.html'>Prof. Guojie Li</a>. Before that, He get a B.S. degree in Software Engineering from <a href='http://hust.edu.cn/'>Huazhong University of Science and Technology</a> in 2012. </p> 
+                    <p>His current research is focused on deep learning in text matching tasks, including ranking, query answering, paraphrase identification.</p>            
+                    <p><img width="300" height="100" align="center" style="max-width:100%;" src="images/trymore.png"></p>
+                </div>
+
+                <div class="profile_title"><h2>Talks</h2></div>
+                <div class="personal_list">
+			<h3><b> SIGIR 2021 Tutorial </b></h3>
+                        <b>Liang Pang</b>, Qingyao Ai, Jun Xu.
+                        <a target="new" href="https://sigir.org/sigir2021/tutorials/">
+			Beyond Probability Ranking Principle: Modeling the Dependencies among Documents.
+                        </a>
+                        <em>The 44th International ACM SIGIR Conference on Research and Development in Information Retrieval. (SIGIR 2021)</em>
+                        <span>[<a target="new" href="">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/pl8787/wsdm2021-beyond-prp-tutorial">slides</a>]</span> 
+                        <span>[<a target="new" href="https://www.underline.io/events/154/sessions/4862/lecture/27745-tut1915---beyond-probability-ranking-principle-modeling-the-dependencies-among-documents">videos</a>]</span> 
+                </div>
+                <div class="personal_list">
+			<h3><b> WSDM 2021 Tutorial </b></h3>
+                        <b>Liang Pang</b>, Qingyao Ai, Jun Xu.
+                        <a target="new" href="http://www.wsdm-conference.org/2021/tutorials.php#4">
+			Beyond Probability Ranking Principle: Modeling the Dependencies among Documents.
+                        </a>
+                        <em>The 14th ACM International Conference on Web Search and Data Mining. (WSDM 2021)</em>
+                        <span>[<a target="new" href="https://github.com/pl8787/wsdm2021-beyond-prp-tutorial/blob/master/docs/wsdm2021-tutorial.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/pl8787/wsdm2021-beyond-prp-tutorial">slides</a>]</span> 
+                        <span>[<a target="new" href="https://www.bilibili.com/video/BV1eV411Y7w1/">Part1</a>]</span> 
+                        <span>[<a target="new" href="https://www.bilibili.com/video/BV1t5411K76U/">Part2</a>]</span> 
+                        <span>[<a target="new" href="https://www.bilibili.com/video/BV14Z4y1P7P4/">Part3</a>]</span> 
+                </div>
+                <div class="personal_list">
+			<h3><b> CIPS Summer School 2018 中国中文信息学会《前沿技术讲习班》 </b></h3>
+                        Jun Xu, <b>Liang Pang</b>.
+                        <a target="new" href="http://cips-upload.bj.bcebos.com/ssatt2018%2FATT9_2_%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2%E4%B8%AD%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B0%E8%BF%9B%E5%B1%95.pdf">
+			Deep and Reinforcement Learning for Information Retrieval.信息检索中的深度强化学习新进展.
+                        </a>
+                        <span>[<a target="new" href="http://www.bigdatalab.ac.cn/~pangliang/papers/2018/CIPS2018.pdf">slides</a>]</span> 
+                        <span>[<a target="new" href="http://www.cipsc.org.cn/ssatt2018/">site</a>]</span> 
+                </div>
+		
+		
+
+                <div class="profile_title"><h2>Open Source</h2></div>
+                <div class="personal_list">
+		<div class="info">
+                    <div class="profile_title">AISO - Adaptive Information Seeking for Open-Domain Question Answering</div>
+                    <div class="personal_list">
+                        <p><img width="300" height="100" align="center" style="max-width:100%;" src="https://github.com/zycdev/AISO/raw/main/figs/demo.gif"></p>
+                        <p>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=zycdev&repo=AISO&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=zycdev&repo=AISO&type=fork&count=true&" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </p>
+                        <p>code (<a target='new' href='https://github.com/zycdev/AISO'>https://github.com/zycdev/AISO</a>)</P>
+                    </div>
+                </div>
+		<div class="info">
+                    <div class="profile_title">TVR - Transformation driven Visual Reasoning</div>
+                    <div class="personal_list">
+                        <p><img width="300" height="100" align="center" style="max-width:100%;" src="images/TVR.png"></p>
+                        <p>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=hughplay&repo=TVR&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=hughplay&repo=TVR&type=fork&count=true&" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </p>
+                        <p>code (<a target='new' href='https://github.com/hughplay/TVR'>https://github.com/hughplay/TVR</a>)</P>
+                        <p>demo (<a target='new' href='https://hongxin2019.github.io/TVR'>https://hongxin2019.github.io/TVR</a>)</P>
+                    </div>
+                </div>
+		<div class="info">
+                    <div class="profile_title">Project: MatchZoo - Open ToolKit for Deep Text Matching & Neural IR</div>
+                    <div class="personal_list">
+                        <p><img width="300" height="100" align="center" style="max-width:100%;" src="images/matchzoo2.png"></p>
+                        <p>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=NTMC-Community&repo=MatchZoo&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=NTMC-Community&repo=MatchZoo&type=fork&count=true&" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </p>
+                        <p>MatchZoo (<a target='new' href='https://github.com/NTMC-Community/matchzoo'>https://github.com/NTMC-Community/matchzoo</a>)</P>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="profile_title">Project: TextNet - Open Framework of Deep Learning for Text (C++)</div>
+                    <div class="personal_list">
+                        <p><h1>TextNet</h1></p>
+                        <p>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=pl8787&repo=textnet-release&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                            <iframe src="https://ghbtns.com/github-btn.html?user=pl8787&repo=textnet-release&type=fork&count=true&" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                        </p>
+                        <p>TextNet (<a target='new' href='https://github.com/pl8787/textnet-release'>https://github.com/pl8787/textnet-release</a>)</P>
+                    </div>
+                </div></div>      
+
+                <!-- 获奖信息 -->
+                <div class="profile_title"><h2>Hornors and Awards</h2></div>
+                <div class="personal_list">
+                    <ul>
+                        <li>
+                            <a target='new' href='http://www.cikm2017.org/'>ACM CIKM 2017 Best Full Paper Runner-up Award</a>
+                        </li>                                              
+                        <li>
+                            2017 CIKM Student Travel Award
+                        </li>
+                        <li>
+                            2016 AAAI Student Travel Award
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 学术服务 -->
+                <div class="profile_title"><h2>Academic Services</h2></div>
+                 <div class="personal_list">
+                    <ul>
+                        <li>PC member for AAAI2019</li>
+                        <li>PC member for ACML2019</li>
+                        <li>PC member for CCIR2018</li>
+                        <li>Reviewer for: TIST</li>
+                    </ul>
+                </div>
+                <hr size=2 width="100%" align=center>
+                <div align="center">
+                    <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=yH-ZfHiYjJPTJMqfI2a2x3SccNtmO5wRTfhVFZ6Ck1U"></script>
+                    <noscript>
+                        <a href='https://clustrmaps.com/site/1agef'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=yH-ZfHiYjJPTJMqfI2a2x3SccNtmO5wRTfhVFZ6Ck1U'/></a>
+                    </noscript>
+                </div>
+                <!-- 基本资料 结束 -->
+              </div>
+
+              <div id="myTab44_Content1" class="tabnone">
+                <!-- 学术成果 开始 -->
+                <div class="year_style">2022</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+			Yunchang Zhu, <b>Liang Pang</b>, Yanyan Lan, Huawei Shen and Xueqi Cheng.
+                        <a target="new" href="">
+			LoL: A Comparative Regularization Loss over Query Reformulation Losses for Pseudo-Relevance Feedback
+                        </a>
+                        <em>Proceedings of the 45rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'22)</em>
+                        <span>[<a target="new" href="#">pdf</a>]</span> 
+                        <span>[<a target="new" href="#">code</a>]</span>
+                    </li> 
+                    <li>
+                        Jianing Li, Ruibin Xiong, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo, Xueqi Cheng.
+                        <a target="new" href="">
+                        Overview of the Frontier Progress of Causal Machine Learning. (因果机器学习的前沿进展综述)
+                        </a>
+                        <em>Journal of Computer Research and Development (计算机研究与发展)</em>
+                        <span>[<a target="new" href="">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li>
+                    <li>
+                        Weijie Yu, Chen Xu, Jun Xu, <b>Liang Pang</b>, and Ji-Rong Wen.
+                        <a target="new" href="">
+			Distribution Distance Regularized Sequence Representation for Text Matching in Asymmetrical Domains.
+                        </a>
+                        <em>IEEE Transactions on Audio, Speech and Language Processing (TASLP)</em>
+                        <span>[<a target="new" href="">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li> 
+                    </ul>
+                </div>
+ 
+                <div class="year_style">2021</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Xueqi Cheng.
+                        <a target="new" href="https://arxiv.org/abs/2101.06423">
+			Match-Ignition: Plugging PageRank into Transformer for Long-form Text Matching.
+                        </a>
+                        <em>Proceedings of the 30th ACM International Conference on Information and Knowledge Management (CIKM '21)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2101.06423.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li> 
+                    <li>
+                        Changying Hao, <b>Liang Pang</b>, Yanyan Lan, Yan Wang, Jiafeng Guo, Xueqi Cheng.
+                        <a target="new" href="https://arxiv.org/abs/2104.00929">
+			Sketch and Customize: A Counterfactual Story Generator.
+                        </a>
+                        <em>Proceedings of the 35th AAAI Conference on Artificial Intelligence. (AAAI 2021)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2104.00929.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/ying-A/SandC">code</a>]</span> 
+                    </li> 
+                    <li>
+			Fei Xiao, <b>Liang Pang</b>, Yanyan Lan, Yan Wang, Huawei Shen and Xueqi Cheng.
+                        <a target="new" href="">
+			Transductive Learning for Unsupervised Text Style Transfer.
+                        </a>
+			<em>The 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP 2021)</em>
+                        <span>[<a target="new" href="http://arxiv.org/abs/2109.07812">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/xiaofei05/tsst">code</a>]</span> 
+                    </li> 
+                    <li>
+			Yunchang Zhu, <b>Liang Pang</b>, Yanyan Lan, Huawei Shen and Xueqi Cheng.
+                        <a target="new" href="">
+			Adaptive Information Seeking for Open-Domain Question Answering.
+                        </a>
+			<em>The 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP 2021)</em>
+			<b>(First place in the HotpotQA Fullwiki leaderboard, since Sep. 2021)</b>
+                        <span>[<a target="new" href="http://arxiv.org/abs/2109.06747">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/zycdev/AISO">code</a>]</span>
+                        <span>[<a target="new" href="https://hotpotqa.github.io">HotpotQA Leaderboard</a>]</span>
+                    </li> 
+                    <li>
+			Ruibin Xiong, Yimeng Chen, <b>Liang Pang</b>, Xueqi Cheng, Zhi-Ming Ma and Yanyan Lan.
+                        <a target="new" href="https://openreview.net/forum?id=4azYdmhHCG">
+			Uncertainty Calibration for Ensemble-Based Debiasing Methods.
+                        </a>
+			<em>Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS 2021)</em>
+                        <span>[<a target="new" href="https://openreview.net/pdf?id=4azYdmhHCG">pdf</a>]</span> 
+                        <span>[<a target="new" href="#">code</a>]</span>
+                    </li> 
+                    <li>
+			Xin Hong, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo, Xueqi Cheng.
+                        <a target="new" href="https://arxiv.org/abs/2011.13160">
+			Transformation Driven Visual Reasoning.
+                        </a>
+                        <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. (CVPR 2021)</em>
+                        <span>[<a target="new" href="https://arxiv.org/abs/2011.13160">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/hughplay/TVR">code</a>]</span> 
+                        <span>[<a target="new" href="https://hongxin2019.github.io/TVR">demo</a>]</span> 
+                    </li> 
+                    <li>
+                        Lin Bo, <b>Liang Pang</b>, Gang Wang, Jun Xu, Xiuqiang He, Ji-Rong Wen.
+                        <a target="new" href="https://arxiv.org/abs/2108.05652">
+			Modeling Relevance Ranking under the Pre-training and Fine-tuning Paradigm.
+                        </a>
+                        <em>Arxiv</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2108.05652.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li> 
+                    <li>
+                        Lijuan Chen, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo, Xueqi Cheng.
+                        <a target="new" href="https://arxiv.org/abs/2108.07081">
+			Toward the Understanding of Deep Text Matching Models for Information Retrieval.
+                        </a>
+                        <em>Arxiv</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2108.07081.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li> 
+                    </ul>
+                </div>
+                <div class="year_style">2020</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        <b>Liang Pang</b>, Jun Xu, Qingyao Ai, Yanyan Lan, Xueqi Cheng, and Jirong Wen.
+                        <a target="new" href="https://arxiv.org/abs/1912.05891">
+                        SetRank: Learning a Permutation-Invariant Ranking Model for Information Retrieval.
+                        </a>
+                        <em>Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'20)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/1912.05891">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/pl8787/SetRank">code</a>]</span> 
+                        <span>[<a target="new" href="#">slides</a>]</span> 
+                    </li> 
+                    <li>
+                        Yunchang Zhu, <b>Liang Pang</b>, Yanyan Lan, and Xueqi Cheng.
+                        <a target="new" href="https://arxiv.org/abs/2005.11223">
+                        L2R2: Leveraging Ranking for Abductive Reasoning.
+                        </a>
+                        <em>Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR'20)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2005.11223">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/zycdev/L2R2">code</a>]</span> 
+                        <span>[<a target="new" href="#">slides</a>]</span> 
+                    </li> 
+                    <li>
+                        Changying Hao, <b>Liang Pang</b>, Yanyan Lan, Fei Sun, Jiafeng Guo, Xueqi Cheng.
+                        <a target="new" href="#">
+			Ranking Enhanced Dialogue Generation.
+                        </a>
+			<em>Proceedings of the 29th ACM International Conference on Information and Knowledge Management (CIKM'20)</em>
+                        <span>[<a target="new" href="https://arxiv.org/abs/2008.05640">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/ying-A/RED">code</a>]</span> 
+                        <span>[<a target="new" href="#">slides</a>]</span> 
+                    </li> 
+                    <li>
+                        Hainan Zhang, Yanyan Lan, <b>Liang Pang</b>, Hongshen Chen, Zhuoye Ding, and Dawei Yin.
+                        <a target="new" href="https://arxiv.org/pdf/2009.12735">
+                        Modeling Topical Relevance for Multi-Turn Dialogue Generation.
+                        </a>
+                        <em>Proceedings of the 29th International Joint Conference on Artificial Intelligence. (IJCAI 2020)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2009.12735">pdf</a>]</span> 
+                        <span>[<a target="new" href="">code</a>]</span> 
+                    </li> 
+                    <li>
+                        Yimeng Chen, Yanyan Lan, Ruibin Xiong, <b>Liang Pang</b>, Zhiming Ma, and Xueqi Cheng.
+                        <a target="new" href="https://www.ijcai.org/Proceedings/2020/0516.pdf">
+                        Evaluating Natural Language Generation via Unbalanced Optimal Transport.
+                        </a>
+                        <em>Proceedings of the 29th International Joint Conference on Artificial Intelligence. (IJCAI 2020)</em>
+                        <span>[<a target="new" href="https://www.ijcai.org/Proceedings/2020/0516.pdf">pdf</a>]</span> 
+                    </li> 
+                    <li>
+                        Weijie Yu, Chen Xu, Jun Xu, <b>Liang Pang</b>, Xiaopeng Gao, Xiaozhao Wang, Ji-Rong Wen.
+                        <a target="new" href="https://arxiv.org/pdf/2010.07717">
+                        Wasserstein Distance Regularized Sequence Representation for Text Matching in Asymmetrical Domains.
+                        </a>
+			<em>The 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)</em>
+                        <span>[<a target="new" href="https://arxiv.org/pdf/2010.07717">pdf</a>]</span> 
+                    </li> 
+                    <li>
+			Wanqing Cui, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo, Xueqi Cheng
+                        <a target="new" href="#">
+			Beyond Language: Learning Commonsense from Images for Reasoning.
+                        </a>
+			<em>The 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP 2020)</em>
+                        <span>[<a target="new" href="https://arxiv.org/abs/2010.05001">pdf</a>]</span> 
+                    </li> 
+                    <li>
+			Bin Jiang, Jingxu Yang, Chao Yang, Wanyue Zhou, <b>Liang Pang</b>, Xiaokang Zhou
+                        <a target="new" href="https://www.sciencedirect.com/science/article/abs/pii/S0950705120306080">
+			Knowledge Augmented Dialogue Generation with Divergent Facts Selection.
+                        </a>
+			<em>Knowledge-Based Systems, 2020</em>
+                        <span>[<a target="new" href="https://www.sciencedirect.com/science/article/abs/pii/S0950705120306080">pdf</a>]</span> 
+                    </li> 
+                    <li>
+			Bin Jiang, Jing Hou, Wanyue Zhou, Chao Yang, Shihan Wang, <b>Liang Pang</b>
+                        <a target="new" href="https://www.aclweb.org/anthology/2020.coling-main.14.pdf">
+			METNet: A Mutual Enhanced Transformation Network for Aspect-based Sentiment Analysis.
+                        </a>
+			<em>The 28th International Conference on Computational Linguistics (COLING 2020)</em>
+                        <span>[<a target="new" href="https://www.aclweb.org/anthology/2020.coling-main.14.pdf">pdf</a>]</span> 
+                    </li> 
+                    <li>
+			Bin Jiang, Wanyue Zhou, Jingxu Yang, Chao Yang, Shihan Wang, <b>Liang Pang</b>
+                        <a target="new" href="https://www.aclweb.org/anthology/2020.coling-main.361.pdf">
+			PEDNet: A Persona Enhanced Dual Alternating Learning Network for Conversational Response Generation.
+                        </a>
+			<em>The 28th International Conference on Computational Linguistics (COLING 2020)</em>
+                        <span>[<a target="new" href="https://www.aclweb.org/anthology/2020.coling-main.361.pdf">pdf</a>]</span> 
+                    </li> 
+                    <li>
+                        Cinjon Resnick, Chao Gao, Gorog Marton, Takayuki Osogami, <b>Liang Pang</b>, Toshihiro Takahi.
+                        <a target="new" href="https://link.springer.com/chapter/10.1007/978-3-030-29135-8_2">
+			Pommerman & NeurIPS 2018
+                        </a>
+                        <em>The NeurIPS'18 Competition, Springer, Cham</em>
+                        <span>[<a target="new" href="https://link.springer.com/chapter/10.1007/978-3-030-29135-8_2">pdf</a>]</span> 
+                    </li> 
+                    </ul>
+                </div>
+                <div class="year_style">2019</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu, Lixin Su and Xueqi Cheng.
+                        <a target="new" href="papers/2019/AAAI2019_HASQA.pdf">
+                        HAS-QA: Hierarchical Answr Spans Model for Open-Domain Question Answering.
+                        </a>
+                        <em>Proceedings of the 33th AAAI Conference on Artificial Intelligence. (AAAI 2019)</em>
+                        <span>[<a target="new" href="papers/2019/AAAI2019_HASQA.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="#">code</a>]</span> 
+                        <span>[<a target="new" href="papers/2019/AAAI2019_HASQA_slides.pdf">slides</a>]</span> 
+                    </li> 
+                    <li>
+                        Hainan Zhang, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo and Xueqi Cheng.
+                        <a target="new" href="papers/2019/ACL2019_ReCoSa.pdf">
+                        ReCoSa: Detecting the Relevant Contexts with Self-Attention for Multi-turn Dialogue Generation.
+                        </a>
+                        <em>Proceedings of the 57th Conference of the Association for Computational Linguistics. (ACL 2019)</em>
+                        <span>[<a target="new" href="papers/2019/ACL2019_ReCoSa.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://github.com/zhanghainan/ReCoSa">code</a>]</span> 
+                    </li> 
+                    <li>
+		        Jiafeng Guo, Yixing Fan, <b>Liang Pang</b>, Liu Yang, Qingyao Ai, Hamed Zamani, Chen Wu, W. Bruce Croft and Xueqi Cheng. 
+                        <a target="new" href="papers/2019/Survey_Preprint.pdf">
+                        A Deep Look into Neural Ranking Models for Information Retrieval.
+                        </a>
+                        <em>Information Processing &amp; Management (IPM).</em>
+                        <span>[<a target="new" href=" https://doi.org/10.1016/j.ipm.2019.102067">online version</a>]</span>
+                    </li>
+                    <li>
+                        Peng Peng, <b>Liang Pang</b>, Yufeng Yuan, Chao Gao.
+                        <a target="new" href="papers/2019/TechReport2019.pdf">
+                        Continual Match Based Training in Pommerman: Technical Report.
+                        </a>
+                        <em><a target="new" href="https://www.pommerman.com">Pommerman Competetion on NeurIPS 2018</a></em>
+                        <span>[<a target="new" href="https://arxiv.org/abs/1812.07297">pdf</a>]</span> 
+                        <span>[<a target="new" href="https://www.pommerman.com/leaderboard">leaderboard</a>]</span> 
+                    </li> 
+                    </ul>
+                </div>
+                <div class="year_style">2018</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        Jun Xu and <b>Liang Pang</b>.
+                        <a target='new' href='http://cips-upload.bj.bcebos.com/ssatt2018%2FATT9_2_%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2%E4%B8%AD%E7%9A%84%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B0%E8%BF%9B%E5%B1%95.pdf'>
+                        Deep and Reinforcement Learning for Information Retrieval.
+                        </a>
+                        <em>CIPS Summer School, July 29, 2018, Beijing.</em>
+                        <span>[<a target="new" href="papers/2018/CIPS2018.pdf">slides</a>]</span> 
+                        <span>[<a target="new" href="http://www.cipsc.org.cn/ssatt2018/">site</a>]</span> 
+                    </li>
+                    <li>
+                        Lijuan Chen, Yanyan Lan, <b>Liang Pang</b>, Jiafeng Guo, Jun Xu and Xueqi Cheng.
+                        <a target='new' href='papers/2018/AIRS2018_RIMatch.pdf'>
+                        RI-Match: Integrating both Representations and Interactions for Deep Semantic Matching
+                        </a>
+                        <em>Proceedings of the 14th Asia Information Retrieval Societies Conference. (AIRS 2018)</em>
+                        <span>[<a target="new" href="papers/2018/AIRS2018_RIMatch.pdf">pdf</a>]</span> 
+                    </li> 
+                    </ul>
+                </div>
+                <div class="year_style">2017</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu and Xueqi Cheng.
+                        <a target='new' href='papers/2017/CIKM2017_DeepRank.pdf'>
+                        DeepRank: a New Deep Architecture for Relevance Ranking in Information Retrieval.
+                        </a>
+                        <em>Proceedings of the 26th ACM International Conference on Information and Knowledge Management. (CIKM 2017)</em>
+                        <span>[<a target="new" href="papers/2017/CIKM2017_DeepRank.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="#">code</a>]</span> 
+                    </li> 
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jun Xu, Jiafeng Guo and Xueqi Cheng.
+                        <a target='new' href='papers/2017/ACML2017_LSNN.pdf'>
+                        Locally Smoothed Neural Networks.
+                        </a>
+                        <em>The 9th Asian Conference on Machine Learning. (ACML 2017)</em>
+                        <span>[<a target="new" href="papers/2017/ACML2017_LSNN.pdf">pdf</a>]</span> 
+                    </li>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu and Xueqi Cheng.
+                        <a target='new' href='papers/2017/NeuIR2017_Investigation.pdf'>
+                        A Deep Investigation of Deep IR Models.
+                        </a> 
+                        <em>Neu-IR: The SIGIR 2017 Workshop on Neural Information Retrieval. (SIGIR2017)</em>
+                        <span>[<a target="new" href="papers/2017/NeuIR2017_Investigation.pdf">pdf</a>]</span> 
+                    </li> 
+                    <li>
+                        Yixing Fan, Jiafeng Guo, Yanyan Lan, Jun Xu, <b>Liang Pang</b> and Xueqi Cheng.
+                        <a target='new' href='papers/2017/CIKM2017_Visual.pdf'>
+                        Learning Visual Features from Snapshots for Web Search
+                        </a>.
+                        <em>Proceedings of the 26th ACM International Conference on Information and Knowledge Management (CIKM 2017), Singapore.</em>
+                        (<b>Best Full Paper Runner-up</b>) 
+                        <span>[<a target="new" href="papers/2017/CIKM2017_Visual.pdf">pdf</a>]</span> 
+                     </li>
+                     <li>
+                        Yixing Fan, <b>Liang Pang</b>, Jianpeng Hou, Jiafeng Guo, Yanyan Lan and Xueqi Cheng.
+                        <a target='new' href='papers/2017/NeuIR2017_MatchZoo.pdf'>
+                        MatchZoo: A Toolkit for Deep Text Matching.
+                        </a>
+                        <em>Neu-IR: The SIGIR 2017 Workshop on Neural Information Retrieval, Tokyo, 2017. </em>
+                        <span>[<a target="new" href="papers/2017/NeuIR2017_MatchZoo.pdf">pdf</a>]</span> 
+                        <span>[<a target='new' href='https://github.com/NTMC-Community/MatchZoo'>code</a>]</span>
+                     </li>
+                     <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jun Xu, Jiafeng Guo, Shengxian Wan, and Xueqi Cheng.
+                        <a target='new' href='papers/2017/CJC2017_Survey.pdf'>
+                        A Survey on Deep Text Matching.
+                        </a>
+                        <em>Chinese Journal of Computers, Volume 40, 2017.</em>
+                        庞亮，兰艳艳，郭嘉丰，徐君，万圣贤，程学旗.
+                        <a target='new' href='papers/2017/CJC2017_Survey.pdf'>
+                        深度文本匹配综述
+                        </a> 
+                        <em>计算机学报，2017.</em>
+                        <span>[<a target="new" href="papers/2017/CJC2017_Survey.pdf">pdf</a>]</span> 
+                     </li>
+                     </ul>
+                </div>
+                <div class="year_style">2016</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu, Shengxian Wan and Xueqi Cheng.
+                        <a target='new' href='papers/2016/AAAI2016_MatchPyramid.pdf'>
+                        Text Matching as Image Recognition.
+                        </a>
+                        <em>The 13th AAAI Conference on Artificial Intelligence, Phoenix, Arizona, USA. (AAAI 2016)</em>
+                        <span>[<a target="new" href="papers/2016/AAAI2016_MatchPyramid.pdf">pdf</a>]</span> 
+                    </li>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu and Xueqi Cheng.
+                        <a target="new" href='papers/2016/NeuIR2016_MatchPyramid.pdf'>
+                        A Study of MatchPyramid Models on Ad-hoc Retrieval.
+                        </a>
+                        <em>Neu-IR: The SIGIR 2016 Workshop on Neural Information Retrieval</em>
+                        <span>[<a target="new" href="papers/2016/NeuIR2016_MatchPyramid.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="papers/2016/NeuIR2016_talk.pdf">slides</a>]</span> 
+                    </li>
+                    <li>
+                        <b>Liang Pang</b>, Yanyan Lan, Jiafeng Guo, Jun Xu, Xueqi Cheng.
+                        <a target='new' href='papers/2016/AAAI2016_SPAN.pdf'>
+                        SPAN: Understanding a Question with Its Support Answers.
+                        </a>
+                        <em>The 13th AAAI Conference on Artificial Intelligence Student Abstract, Phoenix, Arizona, USA. (AAAI 2016)</em>
+                        <span>[<a target="new" href="papers/2017/AAAI2016_SPAN.pdf">pdf</a>]</span> 
+                        <span>[<a target="new" href="#">site</a>]</span> 
+                    </li>
+                    <li>
+                        Shengxian Wan, Yanyan Lan, Jiafeng Guo, Jun Xu, <b>Liang Pang</b> and Xueqi Cheng.
+                        <a target='new' href='papers/2016/AAAI2016_MVLSTM.pdf'>
+                        A Deep Architecture for Semantic Matching with Multiple Positional Sentence Representations.
+                        </a>
+                        <em>The 13th AAAI Conference on Artificial Intelligence, Phoenix, Arizona, USA. (AAAI 2016)</em>
+                        <span>[<a target="new" href="papers/2016/AAAI2016_MVLSTM.pdf">pdf</a>]</span> 
+                    </li>
+                    <li>
+                        Shengxian Wan, Yanyan Lan, Jiafeng Guo, Jun Xu, <b>Liang Pang</b> and Xueqi Cheng.
+                        <a target='new' href='papers/2016/IJCAI2016-MatchSRNN.pdf'>
+                        Match-SRNN: Modeling the Recursive Matching Structure with Spatial RNN.
+                        </a>
+                        <em>Proceedings of the 25th International Joint Conference on Artificial Intelligence. (IJCAI 2016)</em>
+                        <span>[<a target="new" href="papers/2016/IJCAI2016-MatchSRNN.pdf">pdf</a>]</span> 
+                    </li> 
+                    <li>
+                        Liu Yang, Qingyao Ai, Damiano Spina, Ruey-Cheng Chen, <b>Liang Pang</b>, W. Bruce Croft, Jiafeng Guo and Falk Scholer.
+                        <a target='new' href='papers/2016/ECIR2016_yang.pdf'>
+                        Beyond Factoid QA: Effective Methods for Non-factoid Answer Sentence Retrieval.
+                        </a>
+                        <em>The 38th European Conference on Information Retrieval, Padua, Italy (ECIR 2016)</em>
+                        <span>[<a target="new" href="papers/2016/ECIR2016_yang.pdf">pdf</a>]</span> 
+                    </li>
+                    <li>
+                        Hong Hu, Liang Pang and Zhongzhi Shi
+                        <a target='new' href='papers/2016/KBS2016.pdf'>
+                        Image Matting in the Perception Granular Deep Learning.
+                        </a>
+                        <em>Knowledge-Based Systems, 2016.</em>
+                        <span>[<a target="new" href="papers/2016/KBS2016.pdf">pdf</a>]</span> 
+                    </li>
+                    </ul>
+                </div>                                       
+                <div class="year_style">2015 and before</div>
+                <div class="personal_list">
+                    <ul>
+                    <li>
+                        Hong Hu, Liang Pang, Dongping Tian and Zhongzhi Shi
+                        <a target='new' href='papers/2014/ESWA2014.pdf'>
+                        Perception Granular Computing in Visual Haze-free Task.
+                        </a>
+                        <em>Expert Systems with Applications, 2014.</em>
+                        <span>[<a target="new" href="papers/2014/ESWA2014.pdf">pdf</a>]</span> 
+                    </li>
+                    </ul>
+                </div>                                       
+                <!-- 学术成果 结束 -->
+              </div>
+              <div class="clear"></div>
+              <div id="myTab44_Content2" class="tabnone">
+                <!-- 科研项目 开始 -->
+                <div class="year_style">MatchZoo (<a target='new' href='https://github.com/NTMC-Community/matchzoo'>https://github.com/NTMC-Community/matchzoo</a>)</div>
+                <div class="userContent">
+                    <p>MatchingZoo is a toolkit for text matching. It was developed with a focus on facilitate the designing, comparing and sharing of deep text matching models. The architecture of the MatchZoo toolit is depicited in Figure. There are three major modules in the toolkit, namely data preparation, model construction, training and evaluation, respectively. These three modules are actually organized as a pipeline of data flow.</p>
+                    <img width="400" height="200" align="center" style="max-width:100%;" src="images/matchzoo.png">
+                    <p>Reference: </p>
+                    <p>Yixing Fan, Liang Pang, Jianpeng Hou, Jiafeng Guo, Yanyan Lan and Xueqi Cheng. <a target='new' href='papers/2017/MatchZoo.pdf'>MatchZoo: A Toolkit for Deep Text Matching</a>. Neu-IR: The SIGIR 2017 Workshop on Neural Information Retrieval, Tokyo, 2017. </p>
+                </div>
+                <div class="year_style">Academic Benchmark (<a target='new' href='http://www.bigdatalab.ac.cn/benchmark/'>http://www.bigdatalab.ac.cn/benchmark/</a>)</div>
+                <div class="userContent">
+                    <p>A platform for not only reporting the performances of state-of-the-art algorithms in different domains, but also providing the corresponding datasets, codes, and scripts that can make the experimental results reproducible.</p>
+                </div>
+                <!-- 科研项目 结束 -->
+              </div>
+                 
+            </div>
           </div>
         </div>
-
-      </div>
+        <!-- 右侧 结束 -->
     </div>
-
-
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-  </body>
+</div>
+</body>
 </html>
